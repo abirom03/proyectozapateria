@@ -1,0 +1,72 @@
+<div class="card mt-5">
+  <div class="card-body">
+    <form  #productForm = "ngForm"(ngSubmit)= "onSubmit(productForm)" >
+<input type="hidden" name="$key" #$key="ngModel" [(ngModel)] = "productService.selectedProduct.$key">
+
+        <div class="form-grup>">
+          <input
+            type="text"
+            class="form-control"
+            name="nombre"
+            #nombre= "ngModel"
+          [(ngModel)] = "productService.selectedProduct.nombre"
+          placeholder="Agrega el nombre del producto"
+           >
+        </div>
+         
+          <br>
+        <div class="form-grup>">
+          <input
+            type="text"
+            class="form-control"
+            name="categoria"
+            #categoria= "ngModel"
+          [(ngModel)] = "productService.selectedProduct.categoria"
+          placeholder="Agrega la categoria del producto"
+           >
+        </div>
+        <br>
+
+
+        <div class="form-grup>">
+          <input
+            type="text"
+            class="form-control"
+            name="talla"
+            #talla= "ngModel"
+          [(ngModel)] = "productService.selectedProduct.talla"
+          placeholder="Agrega la talla del producto"
+           >
+        </div>
+        
+        <br>
+        <div class="form-grup>">
+          <input
+            type="text"
+            class="form-control"
+            name="precio"
+            #precio= "ngModel"
+          [(ngModel)] = "productService.selectedProduct.precio"
+          placeholder="Agrega el precio del producto"
+           >
+        </div>
+
+        <br>
+        
+
+        <div>
+          <div class="form-group"> 
+            <button class="btn btn-primary " type="submit">
+              <i class="fas fa-plus-circle">  AGREGAR PRODUCTO</i>
+            </button>
+          </div>
+          <div class="form-group"> 
+              <button class="btn btn-secondary " type="reset" (click)= "resetForm(productForm)">
+                <i class="fas fa-sync-alt">  ELIMINAR PRODUCTO</i>
+              </button>
+            </div>
+
+        </div>
+    </form>
+  </div>
+</div>
